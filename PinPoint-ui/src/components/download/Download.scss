@@ -1,0 +1,78 @@
+.download {
+  display: flex;
+  justify-content: center;
+  height: 520px;
+  background-color: #e1fff1;
+
+  .container {
+    width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 86px 0;
+
+    h1 {
+      font-size: 50px;
+      line-height: 3.5rem;
+      color: #028e4d;
+      margin-bottom: 40px;
+
+      i {
+        font-weight: 300;
+      }
+    }
+
+    .right {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        text-align: center;
+        color: #028e4d;
+      }
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+
+  // Media query for tablets and small screens
+  @media screen and (max-width: 1024px) {
+    .container {
+      width: 80%;
+
+      h1 {
+        font-size: 48px;
+        line-height: 3.5rem;
+      }
+    }
+  }
+      // Media query for mobile screens
+      @media screen and (max-width: 768px){
+        .container{
+            width: 100%;
+            padding: 20px 24px;
+            padding-top: 56px;
+
+            h1{
+                font-size: 36px;
+                line-height: 2.8rem;
+                margin-bottom: 28px;
+            }
+
+            .right {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img{
+                    width: 350px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+      }
+}

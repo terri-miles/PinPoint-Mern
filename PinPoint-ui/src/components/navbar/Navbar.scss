@@ -1,0 +1,196 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(13, 51, 112);
+  color: white;
+  position: sticky;
+  z-index: 200;
+  top: 0;
+  transition: all 0.5s;
+
+  &.active {
+    // background-color: rgb(246, 246, 246);
+    color: rgb(8, 37, 85);
+    background-color: rgba(
+      248,
+      248,
+      248,
+      0.7
+    ); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect for frosted glass look */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  }
+
+  .container {
+    width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+
+    .logo {
+      font-size: 34px;
+      font-family: "Rubik Mono One", monospace;
+      font-weight: 500;
+      cursor: pointer;
+
+      .text {
+      }
+      .dot {
+      }
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-weight: 500;
+
+      button {
+        background-color: transparent;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid white;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &.buttonChange {
+          border: 1px solid rgb(8, 37, 85);
+          background-color: transparent;
+          color: rgb(8, 37, 85);
+        }
+
+        &:hover {
+          background-color: rgb(37, 103, 210);
+          border-color: rgb(37, 103, 210);
+          transition: all 0.5s;
+          color: white;
+        }
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        position: relative;
+
+        img {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .dropdown {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .options {
+          position: absolute;
+          top: 50px;
+          right: 0;
+          padding: 20px;
+          background-color: white;
+          border: 1px solid rgb(8, 37, 85);
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          color: rgb(8, 37, 85);
+          width: 200px;
+          font-weight: 300;
+
+          .op_links {
+            &:hover {
+              text-decoration: underline;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Media query for tablets and small screens
+  @media screen and (max-width: 1024px) {
+    .container {
+      width: 100%;
+      padding: 20px 24px;
+
+      .logo {
+        font-size: 28px;
+      }
+    }
+  }
+
+  // Media query for mobile screens
+  @media screen and (max-width: 768px) {
+    .container {
+      width: 100%;
+      padding: 20px 24px;
+
+      .logo {
+        font-size: 24px;
+      }
+      .icon {
+        font-size: 34px;
+        cursor: pointer;
+      }
+      .menu {
+        width: 70%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 50;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: rgb(241, 241, 241);
+        color: gray;
+        font-size: 18px;
+        font-weight: 300;
+        padding: 20px 24px;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: all 0.5s;
+
+        &.toggle {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}
+.menu {
+  width: 70%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgb(1, 66, 170);
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 20px 24px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 0.5s;
+
+  &.toggle {
+    transform: scaleX(1);
+  }
+}
+.icon {
+  font-size: 34px;
+  cursor: pointer;
+}
