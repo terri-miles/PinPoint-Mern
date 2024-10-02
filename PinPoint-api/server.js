@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://pinpointhub.netlify.app/",
+    origin: "https://pinpointhub.netlify.app",
     credentials: true,
   })
 );
