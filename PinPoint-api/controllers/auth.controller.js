@@ -42,7 +42,8 @@ export const login = async (req, res, next) => {
     res
       .cookie("accessToken", token, {
         httpOnly: true,
-        secure: true,
+        secure: "production",
+        sameSite: "none",
         maxAge: age,
       })
       .status(200)
@@ -57,7 +58,7 @@ export const logout = async (req, res, next) => {
     res
       .clearCookie("accessToken", {
         sameSite: "none",
-        secure: true,
+        secure: "production",
       })
       .status(200)
       .send("User has been logged out!");
